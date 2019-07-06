@@ -32,7 +32,7 @@ export const IndexPageTemplate = ({
           justifyContent: 'flex-start',
           alignItems: 'left',
           flexDirection: 'column',
-          marginLeft: 100,
+          marginLeft: 90,
         }}
       >
         <h1
@@ -53,7 +53,7 @@ export const IndexPageTemplate = ({
       <div className="container">
         <div className="section">
           <div className="columns">
-            <div className="column is-10 is-offset-1">
+            <div className="column is-10">
               <div className="content">
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
