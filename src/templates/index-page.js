@@ -17,7 +17,7 @@ export const IndexPageTemplate = ({
       style={{
         backgroundImage: `linear-gradient(-132deg, #00AAFF 0%, #01458E 100%)`,
         height: '50vh',
-        minHeight: 400,
+        minHeight: 450,
         backgroundPosition: `top left`,
         backgroundAttachment: `fixed`,
       }}
