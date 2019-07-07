@@ -10,6 +10,9 @@ $primary-invert: #00AAFF
 $body-color: #333
 $black: #2b2523
 
+$navbar-height: 100
+$navbar-height-px: $navbar-height + px;
+
 section
   padding: 0 !important
 
@@ -143,8 +146,8 @@ $menu-label-color: $white-ter
   height: 54px
 
 .logo-mobile
-  width: 115px
-  height: 25px
+  width: 200px
+  height: 50px
   display: none
 
 .menu-container
@@ -159,6 +162,13 @@ $menu-label-color: $white-ter
   display: flex;
   align-items: center;
   justify-content: center;
+
+.menu-item-left
+  justify-content: flex-start
+  margin-left: 5em
+
+#navMenu
+  margin-right: 5em
 
 @import "~bulma"
 
@@ -179,5 +189,13 @@ $menu-label-color: $white-ter
     display: none
   .logo-mobile
     display: flex
+  .menu-item-left
+    margin-left: 0
+  #navMenu
+    margin-right: 0
+    position: fixed
+    top: $navbar-height-px !important
+    right: 0px
+    width: $navbar-height-px
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";

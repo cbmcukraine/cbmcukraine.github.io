@@ -39,7 +39,7 @@ const Navbar = class extends React.Component {
         aria-label="main-navigation"
       >
         <div className="menu-container">
-          <div className="menu-item">
+          <div className="menu-item menu-item-left">
             <Link to="/" title="Logo">
               <img className="logo" src={logo} alt="CBMC Ukraine"/>
             </Link>
@@ -50,16 +50,32 @@ const Navbar = class extends React.Component {
             </Link>
           </div>
           <div className="menu-item">
-            <div className="navbar-end has-text-centered" style={{marginLeft: '1em'}}>
-              <Link className="navbar-item" to="/about">
-                About
-              </Link>
-              <Link className="navbar-item" to="/events">
-                Events
-              </Link>
-              <Link className="navbar-item" to="/contact">
-                Contact
-              </Link>
+
+            <div
+              className={`navbar-burger burger ${this.state.navBarActiveClass}`}
+              data-target="navMenu"
+              onClick={() => this.toggleHamburger()}
+            >
+              <span />
+              <span />
+              <span />
+            </div>
+
+            <div
+              id="navMenu"
+              className={`navbar-menu ${this.state.navBarActiveClass}`}
+            >
+              <div className="navbar-end has-text-centered">
+                <Link className="navbar-item" to="/about">
+                  About
+                </Link>
+                <Link className="navbar-item" to="/events">
+                  Events
+                </Link>
+                <Link className="navbar-item" to="/contact">
+                  Contact
+                </Link>
+              </div>
             </div>
           </div>
         </div>
