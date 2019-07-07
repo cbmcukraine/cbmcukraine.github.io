@@ -44,7 +44,7 @@ export const IndexPageTemplate = ({
           }}
         >
           {
-            title.split(' ').map( word => <p>{word}</p>)
+            title.split(' ').map( (word, key) => <p key={key}>{word}</p>)
           }
         </h1>
       </div>

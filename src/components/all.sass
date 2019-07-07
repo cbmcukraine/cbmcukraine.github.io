@@ -138,6 +138,27 @@ $menu-label-color: $white-ter
   flex-basis: 35%;
   margin: 0 1.5em 0 0;
 
+.logo
+  width: 268px
+  height: 54px
+
+.logo-mobile
+  width: 115px
+  height: 25px
+  display: none
+
+.menu-container
+  display: flex
+  flex-direction: row
+  height: 100%
+  width: 100%
+
+.menu-item
+  flex: 1
+  height: 100%
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
 @import "~bulma"
 
@@ -154,3 +175,9 @@ $menu-label-color: $white-ter
     text-align: center;
     max-width: 70%;
     margin: 0 0 1em;
+  .logo
+    display: none
+  .logo-mobile
+    display: flex
+
+@import "../../node_modules/bulma/sass/utilities/_all.sass";

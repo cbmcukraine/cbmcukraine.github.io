@@ -38,10 +38,44 @@ const Navbar = class extends React.Component {
         role="navigation"
         aria-label="main-navigation"
       >
+        <div className="menu-container">
+          <div className="menu-item">
+            <Link to="/" title="Logo">
+              <img className="logo" src={logo} alt="CBMC Ukraine"/>
+            </Link>
+          </div>
+          <div className="menu-item">
+            <Link to="/" title="Logo">
+              <img className="logo-mobile" src={logo} alt="CBMC Ukraine"/>
+            </Link>
+          </div>
+          <div className="menu-item">
+            <div className="navbar-end has-text-centered" style={{marginLeft: '1em'}}>
+              <Link className="navbar-item" to="/about">
+                About
+              </Link>
+              <Link className="navbar-item" to="/events">
+                Events
+              </Link>
+              <Link className="navbar-item" to="/contact">
+                Contact
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    )
+
+    return (
+      <nav
+        className="navbar is-transparent"
+        role="navigation"
+        aria-label="main-navigation"
+      >
         <div className="container">
           <div className="navbar-brand">
             <Link to="/" className="navbar-item" title="Logo">
-              <img src={logo} alt="CBMC Ukraine" style={{width: 300, height: 80}}/>
+              <img className="logo" src={logo} alt="CBMC Ukraine"/>
             </Link>
             {/* Hamburger menu */}
             <div
