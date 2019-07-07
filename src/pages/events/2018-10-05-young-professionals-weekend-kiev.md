@@ -3,7 +3,7 @@ templateKey: event-page
 title: Young Professionals Weekend Kyiv
 date: 2018-10-05T15:04:10.000Z
 description: 'Young Professionals Weekend, Kyiv 5 - 6 October 2018'
-featuredpost: false
+featuredpost: true
 featuredimage: /img/europartners-ypw-kyiv-2018.jpg
 tags:
   - YP
