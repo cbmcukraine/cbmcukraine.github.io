@@ -27,7 +27,7 @@ export const EventPageTemplate = ({
           backgroundImage: `url(${
             !!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage
           })`,
-          backgroundPosition: `top left`,
+          backgroundPosition: `top center`,
           backgroundAttachment: `fixed`,
         }}
       />
