@@ -8,48 +8,46 @@ class BlogRoll extends React.Component {
     const { data } = this.props
     const { edges: posts } = data.allMarkdownRemark
 
+    console.log(data)
+
     return (
       <div className="columns is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
               <article
-                className={`blog-list-item tile is-child box notification ${
+                className={`blog-list-item tile is-child ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
               >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for event ${
-                            post.title
-                          }`,
+                <Link to={post.fields.slug}>
+                <header className="event-block">
+                  <div>
+                    {
+                      post.frontmatter.featuredimage &&
+                      <div
+                        className="event-featured-image"
+                        style={{
+                          backgroundImage: `url(${
+                            !!post.frontmatter.featuredimage.childImageSharp ? post.frontmatter.featuredimage.childImageSharp.fluid.src : post.frontmatter.featuredimage
+                          })`
                         }}
-                      />
-                    </div>
-                  ) : null}
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
+                      >
+                        <div className="tint">
+                          <span className="title">{post.frontmatter.date}</span>
+                        </div>
+                      </div>
+                    }
+                  </div>
+                  <p className="post-meta title has-text-white is-size-4" style={{color:'white'}}>
+                    {post.frontmatter.title}
                   </p>
                 </header>
-                <p>
+                </Link>
+                <p style={{textAlign: 'justify', textJustify: 'inter-word'}}>
                   {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    More information →
+                  <Link className="" to={post.fields.slug} style={{marginLeft: '5px'}}>
+                    Read more
                   </Link>
                 </p>
               </article>
@@ -90,7 +88,7 @@ export default () => (
                 featuredpost
                 featuredimage {
                   childImageSharp {
-                    fluid(maxWidth: 120, quality: 100) {
+                    fluid(maxWidth: 500, quality: 100) {
                       ...GatsbyImageSharpFluid
                     }
                   }
