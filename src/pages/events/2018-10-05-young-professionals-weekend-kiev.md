@@ -30,3 +30,7 @@ Does this sound familiar to you? Do you want to learn how to talk about Jesus in
 ## For who?
 
 For young professionals between the age of 22 and 35. 
+
+## Registration
+
+Registration is now closed

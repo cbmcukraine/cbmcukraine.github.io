@@ -228,15 +228,19 @@ $menu-label-color: $white-ter
   height: 100%;
 
 .event-featured-image .title
-  position: absolute
-  top: 1em
-  left: 1em
+  display: flex
+  justify-content: center
+  align-items: center
+  height: 100%
   font-family: Roboto-Medium;
   font-size: 40px;
   color: #FFFFFF;
   letter-spacing: 0.67px;
 
 .post-meta
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   background-color: $primary
   font-family: Roboto-Medium;
   font-size: 40px;
@@ -245,6 +249,10 @@ $menu-label-color: $white-ter
   padding-top: 21px;
   padding-left: 30px;
   padding-bottom: 31px;
+  height: 150px;
+
+.post-meta-featured
+  background-color: #005BBB !important
 
 @import "~bulma"
 

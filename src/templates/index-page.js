@@ -23,11 +23,10 @@ export const IndexPageTemplate = ({
                     Latest events
                   </h3>
                   <BlogRoll />
-                  <div className="column is-12 has-text-centered">
-                    <Link className="btn" to="/events">
-                      More events
-                    </Link>
-                  </div>
+                  <br/>
+                  <Link className="btn" to="/events">
+                    More events
+                  </Link>
                 </div>
               </div>
             </div>

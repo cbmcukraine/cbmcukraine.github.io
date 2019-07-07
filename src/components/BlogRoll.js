@@ -16,9 +16,7 @@ class BlogRoll extends React.Component {
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
               <article
-                className={`blog-list-item tile is-child ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
+                className="blog-list-item tile is-child"
               >
                 <Link to={post.fields.slug}>
                 <header className="event-block">
@@ -39,7 +37,7 @@ class BlogRoll extends React.Component {
                       </div>
                     }
                   </div>
-                  <p className="post-meta title has-text-white is-size-4" style={{color:'white'}}>
+                  <p className={`post-meta title has-text-white is-size-4 ${post.frontmatter.featuredpost ? 'post-meta-featured' : ''}`} style={{color:'white'}}>
                     {post.frontmatter.title}
                   </p>
                 </header>
@@ -76,7 +74,7 @@ export default () => (
         ) {
           edges {
             node {
-              excerpt(pruneLength: 400)
+              excerpt(pruneLength: 140)
               id
               fields {
                 slug

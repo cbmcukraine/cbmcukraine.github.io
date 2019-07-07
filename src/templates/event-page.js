@@ -29,6 +29,7 @@ export const EventPageTemplate = ({
           })`,
           backgroundPosition: `top center`,
           backgroundAttachment: `fixed`,
+          backgroundSize: 'cover'
         }}
       />
       <br/>
