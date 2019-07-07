@@ -10,6 +10,10 @@ $primary-invert: #00AAFF
 $body-color: #333
 $black: #2b2523
 
+$size-1: 5rem
+$size-2: 4rem
+$size-3: 3rem
+
 $navbar-height: 100
 $navbar-height-px: $navbar-height + px;
 
@@ -170,6 +174,24 @@ $menu-label-color: $white-ter
 #navMenu
   margin-right: 5em
 
+.card
+  background-image: linear-gradient(-132deg, #00AAFF 0%, #01458E 100%)
+  height: 50vh
+  min-height: 800px
+  background-position: top left
+  background-attachment: fixed
+  overflow: hidden
+
+.card .title
+  display: flex
+  height: 150px
+  width:  100%
+  line-height: 1
+  justif-content: flex-start
+  align-items: left
+  flex-direction: column
+  margin-left: 90
+
 @import "~bulma"
 
 
@@ -197,5 +219,7 @@ $menu-label-color: $white-ter
     top: $navbar-height-px !important
     right: 0px
     width: $navbar-height-px
+  .card
+    min-height: 400px
 
 @import "../../node_modules/bulma/sass/utilities/_all.sass";
