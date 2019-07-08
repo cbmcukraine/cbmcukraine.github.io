@@ -14,7 +14,7 @@ class BlogRoll extends React.Component {
       <div className="columns is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id} style={{padding:'2rem'}}>
+            <div className="is-parent column is-6" key={post.id}>
               <article className="blog-list-item tile is-child">
                 <Link to={post.fields.slug}>
                 <header className="event-block">
