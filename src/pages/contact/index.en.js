@@ -34,8 +34,9 @@ export default class Index extends React.Component {
   }
 
   render() {
+    const {pageContext} = this.props
     return (
-      <Layout>
+      <Layout pageContext={pageContext}>
         <div
           className="full-width-image-container margin-top-0"
           style={{

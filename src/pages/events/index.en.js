@@ -5,8 +5,12 @@ import BlogRoll from '../../components/BlogRoll'
 
 export default class EventsIndexPage extends React.Component {
   render() {
+
+    const pageContext =  this.props.pageContext
+    const langKey = pageContext.langKey
+
     return (
-      <Layout>
+      <Layout pageContext={pageContext}>
         <div
           className="full-width-image-container margin-top-0"
           style={{
@@ -26,7 +30,7 @@ export default class EventsIndexPage extends React.Component {
         <section className="section">
           <div className="container">
             <div className="content">
-              <BlogRoll />
+              <BlogRoll langKey={langKey}/>
               <br/>
             </div>
           </div>

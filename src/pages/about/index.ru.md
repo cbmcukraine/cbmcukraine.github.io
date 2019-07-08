@@ -1,7 +1,7 @@
 ---
 templateKey: 'about-page'
 path: /about
-title: Про наші цінності
+title: О наших ценностях
 ---
 ### Who are you?
 We’re a group of men in the marketplace living out our faith in authentic relationships.

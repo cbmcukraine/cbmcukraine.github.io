@@ -5,12 +5,15 @@ import Navbar from '../components/Navbar'
 import './all.sass'
 import useSiteMetadata from './SiteMetadata'
 
-const TemplateWrapper = ({ children }) => {
+const TemplateWrapper = ({ children, pageContext }) => {
   const { title, description } = useSiteMetadata()
+
+  const langKey = pageContext.langKey ? pageContext.langKey : 'en'
+
   return (
     <div>
       <Helmet>
-        <html lang="en" />
+        <html lang={langKey} />
         <title>{title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1" />
         <meta name="description" content={description} />
@@ -45,7 +48,7 @@ const TemplateWrapper = ({ children }) => {
         <meta property="og:url" content="/" />
         <meta property="og:image" content="/img/og-image.jpg" />
       </Helmet>
-      <Navbar />
+      <Navbar langKey={langKey}/>
       <div>{children}</div>
       <Footer />
     </div>

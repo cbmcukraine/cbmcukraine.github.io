@@ -69,13 +69,11 @@ EventPageTemplate.propTypes = {
   featuredimage: PropTypes.object,
 }
 
-const EventPage = ({ data }) => {
+const EventPage = ({ data, pageContext }) => {
   const { markdownRemark: post } = data
 
-  console.log(post)
-
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <EventPageTemplate
         content={post.html}
         contentComponent={HTMLContent}

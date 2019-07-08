@@ -44,11 +44,11 @@ IndexPageTemplate.propTypes = {
   langKey: PropTypes.string,
 }
 
-const IndexPage = ({ data }) => {
+const IndexPage = ({ data, pageContext }) => {
   const { frontmatter, fields } = data.markdownRemark
 
   return (
-    <Layout>
+    <Layout pageContext={pageContext}>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}

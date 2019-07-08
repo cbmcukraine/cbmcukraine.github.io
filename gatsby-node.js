@@ -101,17 +101,20 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   //   if(node.internal.fieldOwners.slug == 'gatsby-plugin-i18n')
   //     return
 
-  if(node.fields)
-    if(node.fields.slug)
-      if(node.fields.slug.indexOf('/events/') === 0)
-        return
+  const blocked = ['/index.en/', '/index.en/', '/index.ua/', '/about/index.ua/', '/about/index.en/']
+  
+  const slug = node.fields ? node.fields.slug : ''
+  if(slug.indexOf('/events') === 0) return
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
-    createNodeField({
-      name: `slug`,
-      node,
-      value,
-    })
+
+    console.log('!!!!', value)
+
+    // createNodeField({
+    //   name: `slug`,
+    //   node,
+    //   value,
+    // })
   }
 }

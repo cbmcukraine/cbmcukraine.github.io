@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import logo from '../img/logo.svg'
+import languages from '../data/languages'
 
 const Navbar = class extends React.Component {
   constructor(props) {
@@ -32,6 +33,10 @@ const Navbar = class extends React.Component {
   }
 
   render() {
+
+    const {langKey} = this.props;
+    const url = `/${langKey}`
+
     return (
       <nav
         className="navbar is-transparent"
@@ -40,12 +45,12 @@ const Navbar = class extends React.Component {
       >
         <div className="menu-container">
           <div className="menu-item menu-item-left">
-            <Link to="/" title="Logo">
+            <Link to={url} title="Logo">
               <img className="logo" src={logo} alt="CBMC Ukraine"/>
             </Link>
           </div>
           <div className="menu-item">
-            <Link to="/" title="Logo">
+          <Link to={url} title="Logo">
               <img className="logo-mobile" src={logo} alt="CBMC Ukraine"/>
             </Link>
           </div>
@@ -66,15 +71,22 @@ const Navbar = class extends React.Component {
               className={`navbar-menu ${this.state.navBarActiveClass}`}
             >
               <div className="navbar-end has-text-centered">
-                <Link className="navbar-item" to="/about">
+                <Link className="navbar-item" to={`${url}/about`}>
                   About
                 </Link>
-                <Link className="navbar-item" to="/events">
+                <Link className="navbar-item" to={`${url}/events`}>
                   Events
                 </Link>
-                <Link className="navbar-item" to="/contact">
+                <Link className="navbar-item" to={`${url}/contact`}>
                   Contact
                 </Link>
+                {
+                  languages.langs.map( (language, index) => (
+                    <Link key={`${language}-${index}`} className="navbar-item" to={`/${language}`}>
+                      {languages.labels[index]}
+                    </Link>
+                  ))
+                }
               </div>
             </div>
           </div>
