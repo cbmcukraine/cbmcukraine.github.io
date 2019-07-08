@@ -1,6 +1,8 @@
 ---
 templateKey: index-page
-title: Християнский Business and Marketplace Connection Ukraine's Chapter
-language: ua
+title: Объединение Христианского Бизнеса и Предпринимателей, Украинский Филиал
+language: ru
+heading: Последние События
+more: Больше событий
 image: /img/ukraine_houses.jpg
 ---

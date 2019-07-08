@@ -9,6 +9,8 @@ import BlogRoll from '../components/BlogRoll'
 export const IndexPageTemplate = ({
   image,
   title,
+  heading,
+  more,
   langKey
 }) => (
   <div>
@@ -21,12 +23,12 @@ export const IndexPageTemplate = ({
               <div className="content">
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
-                    Latest events
+                    {heading}
                   </h3>
                   <BlogRoll langKey={langKey}/>
                   <br/>
                   <Link className="btn" to="/events">
-                    More events
+                    {more}
                   </Link>
                 </div>
               </div>
@@ -42,6 +44,8 @@ IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   langKey: PropTypes.string,
+  heading: PropTypes.string,
+  more: PropTypes.string,
 }
 
 const IndexPage = ({ data, pageContext }) => {
@@ -53,6 +57,8 @@ const IndexPage = ({ data, pageContext }) => {
         image={frontmatter.image}
         title={frontmatter.title}
         langKey={fields.langKey}
+        heading={frontmatter.heading}
+        more={frontmatter.more}
       />
     </Layout>
   )
@@ -78,6 +84,8 @@ export const pageQuery = graphql`
       frontmatter {
         language
         title
+        heading
+        more
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
