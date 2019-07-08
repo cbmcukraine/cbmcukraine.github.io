@@ -1,6 +1,7 @@
 ---
 templateKey: event-page
 title: Europartners Conference 2020, Jerusalem
+language: en
 date: 2020-02-05T15:04:10.000Z
 featuredpost: false
 featuredimage: /img/EuropartnersConference2020Jerusalem.jpg

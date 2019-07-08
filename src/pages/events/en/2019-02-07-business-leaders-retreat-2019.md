@@ -1,6 +1,7 @@
 ---
 templateKey: event-page
 title: Business Leaders’ Retreat 2019
+language: en
 date: 2019-02-07T15:04:10.000Z
 description: 'Business Leaders’ Retreat 2019, Veldhoven, The Netherlands 7 - 10 February 2019'
 featuredpost: false

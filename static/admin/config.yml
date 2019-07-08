@@ -6,12 +6,14 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "events"
+  - name: "events-en"
     label: "events"
-    folder: "src/pages/events"
+    folder: "src/pages/events/en"
+    filter: {field: "language", value: "en"}
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
+      - {label: "Language", name: "language", widget: "select", options: ["en", "ua", "ru"]}
       - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
@@ -20,6 +22,40 @@ collections:
       - {label: "Featured Image", name: "featuredimage", widget: image}
       - {label: "Body", name: "body", widget: "markdown"}
       - {label: "Tags", name: "tags", widget: "list"}
+   
+  - name: "events_ua"
+    label: "Події"
+    folder: "src/pages/events/ua"
+    filter: {field: "language", value: "ua"}
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Мова", name: "language", widget: "select", options: ["en", "ua", "ru"]}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Назва", name: "title", widget: "string"}
+      - {label: "Дата Публікування", name: "date", widget: "datetime"}
+      - {label: "Описання", name: "description", widget: "text"}
+      - {label: "Важливий пост", name: "featuredpost", widget: "boolean"}
+      - {label: "Головна картинка", name: "featuredimage", widget: image}
+      - {label: "Текст посту", name: "body", widget: "markdown"}
+      - {label: "Теги", name: "tags", widget: "list"}
+
+  - name: "events_ru"
+    label: "События"
+    folder: "src/pages/events/ru"
+    filter: {field: "language", value: "ru"}
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Язык", name: "language", widget: "select", options: ["en", "ua", "ru"]}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Название", name: "title", widget: "string"}
+      - {label: "Дата Публикации", name: "date", widget: "datetime"}
+      - {label: "Описание", name: "description", widget: "text"}
+      - {label: "Важный пост", name: "featuredpost", widget: "boolean"}
+      - {label: "Главная картинка", name: "featuredimage", widget: image}
+      - {label: "Текст поста", name: "body", widget: "markdown"}
+      - {label: "Тэги", name: "tags", widget: "list"}
 
   - name: "pages"
     label: "Pages"

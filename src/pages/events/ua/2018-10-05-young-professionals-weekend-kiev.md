@@ -1,15 +1,17 @@
 ---
 templateKey: event-page
-title: Young Professionals Weekend Kyiv
+title: Вихідні Молодих Профессіоналів Київ
+language: ua
 date: 2018-10-05T15:04:10.000Z
-description: 'Young Professionals Weekend, Kyiv 5 - 6 October 2018'
+description: 'Вихідні Молодих Профессіоналів, Київ 5 - 6 Жовтень  2018'
 featuredpost: true
 featuredimage: /img/europartners-ypw-kyiv-2018.jpg
 tags:
   - YP
+  - Молоді Профессіонали
   - Europartners
   - CBMC
-  - Ukraine
+  - Україна
 ---
 You are a Christian, working in an environment where others are not very interested in God and faith. How do you engage with others? How do you combine your personal faith with your life as a professional? How are you in conversation about Jesus?
 
