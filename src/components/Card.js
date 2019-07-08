@@ -11,7 +11,7 @@ const Card = ({ title, image }) => {
     <div
       className="card full-width-image margin-top-0"
     >
-      <img src={verticalCBMC} alt="CBMC Ukraine" style={{height: '120%', marginLeft: '-30px'}}/>
+      <img src={verticalCBMC} alt="CBMC Ukraine" style={{height: '100%', marginLeft: '-30px'}}/>
       <img className="maskedImage" src={url} />
       <div className="title">
         <h1

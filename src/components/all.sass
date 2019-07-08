@@ -19,6 +19,9 @@ $size-5: 1rem
 $navbar-height: 100
 $navbar-height-px: $navbar-height + px;
 
+html
+  font-family: 'Roboto'
+
 section
   padding: 0 !important
 
@@ -229,6 +232,7 @@ $menu-label-color: $white-ter
 
 .event-featured-image .title
   display: flex
+  flex-direction: column
   justify-content: center
   align-items: center
   height: 100%
@@ -253,6 +257,16 @@ $menu-label-color: $white-ter
 
 .post-meta-featured
   background-color: #005BBB !important
+
+.event-container
+  margin: 1em !important
+
+.page-header-card
+  display: flex
+  justify-content: center
+  align-items: center
+  background-image: linear-gradient(-132deg, #00AAFF 0%, #01458E 100%)
+  margin-bottom: 3em
 
 @import "~bulma"
 
@@ -284,7 +298,7 @@ $menu-label-color: $white-ter
   .card
     min-height: 400px
   .card .title
-    left: 150px;
+    left: 70px;
   .maskedImage
     opacity: 0.75;
     right: 0px;

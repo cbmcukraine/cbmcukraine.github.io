@@ -14,10 +14,8 @@ class BlogRoll extends React.Component {
       <div className="columns is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
-              <article
-                className="blog-list-item tile is-child"
-              >
+            <div className="is-parent column is-6" key={post.id} style={{padding:'2rem'}}>
+              <article className="blog-list-item tile is-child">
                 <Link to={post.fields.slug}>
                 <header className="event-block">
                   <div>
@@ -32,7 +30,9 @@ class BlogRoll extends React.Component {
                         }}
                       >
                         <div className="tint">
-                          <span className="title">{post.frontmatter.date}</span>
+                          <span className="title">
+                            {post.frontmatter.date.split(',').map( (d, index) => <div key={index}>{d}</div>)}
+                          </span>
                         </div>
                       </div>
                     }
@@ -42,7 +42,7 @@ class BlogRoll extends React.Component {
                   </p>
                 </header>
                 </Link>
-                <p style={{textAlign: 'justify', textJustify: 'inter-word'}}>
+                <p style={{textAlign: 'justify', textJustify: 'inter-word', margin: '1em'}}>
                   {post.excerpt}
                   <Link className="" to={post.fields.slug} style={{marginLeft: '5px'}}>
                     Read more

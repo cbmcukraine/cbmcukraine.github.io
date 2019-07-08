@@ -27,16 +27,15 @@ export const EventPageTemplate = ({
           backgroundImage: `url(${
             !!featuredimage.childImageSharp ? featuredimage.childImageSharp.fluid.src : featuredimage
           })`,
-          backgroundPosition: `top center`,
-          backgroundAttachment: `fixed`,
+          backgroundRepeat: 'no-repeat',
           backgroundSize: 'cover'
         }}
       />
       <br/>
       <div className="container content">
         <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
+          <div className="column event-container">
+            <h1 className="title is-size-3 has-text-weight-bold is-bold-light">
               {title}
             </h1>
             <p>{description}</p>

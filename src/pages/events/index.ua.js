@@ -11,12 +11,7 @@ export default class EventsIndexPage extends React.Component {
 
     return (
       <Layout pageContext={pageContext}>
-        <div
-          className="full-width-image-container margin-top-0"
-          style={{
-            backgroundImage: `linear-gradient(-132deg, #00AAFF 0%, #01458E 100%)`,
-          }}
-        >
+        <div className="page-header-card">
           <h1
             className="has-text-weight-bold is-size-1"
             style={{
@@ -24,7 +19,7 @@ export default class EventsIndexPage extends React.Component {
               padding: '1rem',
             }}
           >
-            Latest Events
+            Останні Події
           </h1>
         </div>
         <section className="section">
