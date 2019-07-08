@@ -5,10 +5,10 @@ import PreviewCompatibleImage from './PreviewCompatibleImage'
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
-    const { edges: posts } = data.allMarkdownRemark
+    const { data, langKey } = this.props
+    const { edges } = data.allMarkdownRemark
 
-    console.log(data)
+    const posts = edges.filter( edge => edge.node.frontmatter.language === langKey)
 
     return (
       <div className="columns is-multiline">
@@ -64,7 +64,7 @@ BlogRoll.propTypes = {
   }),
 }
 
-export default () => (
+export default ({langKey}) => (
   <StaticQuery
     query={graphql`
       query BlogRollQuery {
@@ -78,9 +78,11 @@ export default () => (
               id
               fields {
                 slug
+                langKey
               }
               frontmatter {
                 title
+                language
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
@@ -97,7 +99,7 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <BlogRoll data={data} count={count} />}
+    render={(data, count) => <BlogRoll data={data} count={count} langKey={langKey}/>}
   />
 )
 

@@ -2,9 +2,26 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
+const languages = require('./src/data/languages');
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+  
+  createRedirect({
+    fromPath: `/`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    Language: languages.defaultLangKey,
+    toPath: `/${languages.defaultLangKey}`,
+  })
+
+  createRedirect({
+    fromPath: `/about`,
+    isPermanent: true,
+    redirectInBrowser: true,
+    Language: languages.defaultLangKey,
+    toPath: `/${languages.defaultLangKey}/about`,
+  })
 
   return graphql(`
     {
@@ -14,6 +31,7 @@ exports.createPages = ({ actions, graphql }) => {
             id
             fields {
               slug
+              langKey
             }
             frontmatter {
               tags
@@ -33,6 +51,8 @@ exports.createPages = ({ actions, graphql }) => {
 
     posts.forEach(edge => {
       const id = edge.node.id
+      const langKey = edge.node.fields.langKey
+
       createPage({
         path: edge.node.fields.slug,
         tags: edge.node.frontmatter.tags,
@@ -42,6 +62,7 @@ exports.createPages = ({ actions, graphql }) => {
         // additional data can be passed via context
         context: {
           id,
+          langKey
         },
       })
     })
@@ -75,6 +96,15 @@ exports.createPages = ({ actions, graphql }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
   fmImagesToRelative(node) // convert image paths for gatsby images
+
+  // if(node.internal.fieldOwners)
+  //   if(node.internal.fieldOwners.slug == 'gatsby-plugin-i18n')
+  //     return
+
+  if(node.fields)
+    if(node.fields.slug)
+      if(node.fields.slug.indexOf('/events/') === 0)
+        return
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })

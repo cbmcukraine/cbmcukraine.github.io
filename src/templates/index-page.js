@@ -9,6 +9,7 @@ import BlogRoll from '../components/BlogRoll'
 export const IndexPageTemplate = ({
   image,
   title,
+  langKey
 }) => (
   <div>
     <Card title={title} />
@@ -22,7 +23,7 @@ export const IndexPageTemplate = ({
                   <h3 className="has-text-weight-semibold is-size-2">
                     Latest events
                   </h3>
-                  <BlogRoll />
+                  <BlogRoll langKey={langKey}/>
                   <br/>
                   <Link className="btn" to="/events">
                     More events
@@ -40,16 +41,18 @@ export const IndexPageTemplate = ({
 IndexPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  langKey: PropTypes.string,
 }
 
 const IndexPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+  const { frontmatter, fields } = data.markdownRemark
 
   return (
     <Layout>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        langKey={fields.langKey}
       />
     </Layout>
   )
@@ -66,9 +69,14 @@ IndexPage.propTypes = {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+  query IndexPageTemplate($langKey: String!) {
+    markdownRemark(fields: {langKey: {eq: $langKey} }, frontmatter: { templateKey: { eq: "index-page" } }) {
+      fields {
+        slug
+        langKey
+      }
       frontmatter {
+        language
         title
         image {
           childImageSharp {
