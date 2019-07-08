@@ -8,7 +8,7 @@ import useSiteMetadata from './SiteMetadata'
 const TemplateWrapper = ({ children, pageContext }) => {
   const { title, description } = useSiteMetadata()
 
-  const langKey = pageContext.langKey ? pageContext.langKey : 'en'
+  const langKey = (pageContext && pageContext.langKey) ? pageContext.langKey : 'en'
 
   return (
     <div>
