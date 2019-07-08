@@ -20,8 +20,10 @@ class TagRoute extends React.Component {
       totalCount === 1 ? '' : 's'
     } tagged with “${tag}”`
 
+    const {pageContext} = this.props
+
     return (
-      <Layout>
+      <Layout pageContext={pageContext}>
         <section className="section">
           <Helmet title={`${tag} | ${title}`} />
           <div className="container content">
