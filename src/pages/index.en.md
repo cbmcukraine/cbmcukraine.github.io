@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: Christian Business and Marketplace Connection, Ukraine's Chapter
+title: Christian Business and Marketplace Connection Ukraine
 language: en
 heading: Latest Events
 more: More events
