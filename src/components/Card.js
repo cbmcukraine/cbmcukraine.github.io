@@ -33,7 +33,7 @@ const Card = ({ title, image }) => {
           style={{
             color: 'white',
             lineHeight: '1',
-            padding: '0.25em',
+            paddingBottom: '1em',
             zIndex: 1
           }}
         >
