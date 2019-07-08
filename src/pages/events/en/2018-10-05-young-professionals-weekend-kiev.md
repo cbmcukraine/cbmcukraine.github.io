@@ -1,6 +1,6 @@
 ---
 templateKey: event-page
-title: Young Professionals Weekend Kyiv
+title: Young Professionals Weekend Kyiv 2018
 language: en
 date: 2018-10-05T15:04:10.000Z
 description: 'Young Professionals Weekend, Kyiv 5 - 6 October 2018'

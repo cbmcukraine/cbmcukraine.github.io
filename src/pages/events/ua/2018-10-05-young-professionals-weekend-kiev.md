@@ -1,9 +1,9 @@
 ---
 templateKey: event-page
-title: Вихідні Молодих Профессіоналів Київ
+title: Вихідні Молодих Профессіоналів Київ 2018
 language: ua
 date: 2018-10-05T15:04:10.000Z
-description: 'Вихідні Молодих Профессіоналів, Київ 5 - 6 Жовтень  2018'
+description: 'Вихідні Молодих Профессіоналів, Київ 5 - 6 Жовтень 2018'
 featuredpost: true
 featuredimage: /img/europartners-ypw-kyiv-2018.jpg
 tags:

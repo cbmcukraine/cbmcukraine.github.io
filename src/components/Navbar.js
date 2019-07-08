@@ -81,11 +81,11 @@ const Navbar = class extends React.Component {
                   Contact
                 </Link>
                 {
-                  languages.langs.map( (language, index) => (
+                  languages.langs.map( (language, index) => language != langKey ? (
                     <Link key={`${language}-${index}`} className="navbar-item" to={`/${language}`}>
                       {languages.labels[index]}
                     </Link>
-                  ))
+                  ) : null)
                 }
               </div>
             </div>
