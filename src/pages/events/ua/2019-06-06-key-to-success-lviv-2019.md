@@ -3,7 +3,7 @@ templateKey: event-page
 title: Ключ До Успіху Львів 2019
 language: ua
 date: 2019-06-06T15:04:10.000Z
-description: 'Ключ До Успіху, Львів, Україна 6 Червенб 2019'
+description: 'Ключ До Успіху, Львів, Україна 6 Червень 2019'
 featuredpost: true
 featuredimage: /img/lviv-2019-key-to-success.jpg
 tags:
