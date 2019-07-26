@@ -14,7 +14,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Language", name: "language", widget: "select", options: ["en", "ua", "ru"]}
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
@@ -31,7 +31,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Мова", name: "language", widget: "select", options: ["en", "ua", "ru"]}
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
       - {label: "Назва", name: "title", widget: "string"}
       - {label: "Дата Публікування", name: "date", widget: "datetime"}
       - {label: "Описання", name: "description", widget: "text"}
@@ -48,7 +48,7 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - {label: "Язык", name: "language", widget: "select", options: ["en", "ua", "ru"]}
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "event-page"}
       - {label: "Название", name: "title", widget: "string"}
       - {label: "Дата Публикации", name: "date", widget: "datetime"}
       - {label: "Описание", name: "description", widget: "text"}
